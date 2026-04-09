@@ -31,7 +31,6 @@ import com.github.gtexpert.gtwp.common.CommonProxy;
 import com.github.gtexpert.gtwp.common.blocks.GTWPMetaBlocks;
 import com.github.gtexpert.gtwp.common.items.GTWPToolItems;
 import com.github.gtexpert.gtwp.common.metatileentities.GTWPMetaTileEntities;
-import com.github.gtexpert.gtwp.loaders.GTWPMaterialInfoLoader;
 import com.github.gtexpert.gtwp.loaders.recipe.GTWPRecipe;
 import com.github.gtexpert.gtwp.loaders.recipe.GTWPWoodRecipe;
 import com.github.gtexpert.gtwp.loaders.recipe.handlers.GTWPToolRecipeHandler;
@@ -65,6 +64,7 @@ public class CoreModule implements IModule {
 
         GTWPMetaBlocks.init();
         GTWPToolItems.init();
+        GTWPMetaTileEntities.init();
     }
 
     @Override
@@ -94,8 +94,6 @@ public class CoreModule implements IModule {
     @Override
     public void registerRecipesNormal(RegistryEvent.Register<IRecipe> event) {
         GTWPToolRecipeHandler.register();
-        GTWPMaterialInfoLoader.init();
-        GTWPMetaTileEntities.init();
     }
 
     @Override

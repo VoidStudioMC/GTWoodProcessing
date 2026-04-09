@@ -20,11 +20,13 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import gregtech.GTInternalTags;
 import gregtech.api.GregTechAPI;
+import gregtech.api.event.MaterialInfoEvent;
 import gregtech.api.metatileentity.registry.MTEManager;
 
 import com.github.gtexpert.gtwp.api.ModValues;
 import com.github.gtexpert.gtwp.api.util.ModLog;
 import com.github.gtexpert.gtwp.api.util.Mods;
+import com.github.gtexpert.gtwp.loaders.GTWPRecycleInfoLoader;
 import com.github.gtexpert.gtwp.module.ModuleManager;
 import com.github.gtexpert.gtwp.module.Modules;
 
@@ -164,6 +166,11 @@ public class GTWPMod {
     @SubscribeEvent
     public static void registerMTERegistry(MTEManager.MTERegistryEvent event) {
         GregTechAPI.mteManager.createRegistry(ModValues.MODID);
+    }
+
+    @SubscribeEvent
+    public static void registerMaterialInfo(MaterialInfoEvent event) {
+        GTWPRecycleInfoLoader.init();
     }
 
     @SubscribeEvent
