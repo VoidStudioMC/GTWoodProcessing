@@ -8,11 +8,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.common.Optional;
 
-import gregtech.api.GTValues;
+import gregtech.api.util.Mods;
 
 import team.chisel.ctm.api.IFacade;
 
-@Optional.Interface(modid = GTValues.MODID_CTM, iface = "team.chisel.ctm.api.IFacade")
+@Optional.Interface(modid = Mods.Names.CONNECTED_TEXTURES_MOD, iface = "team.chisel.ctm.api.IFacade")
 public interface IFacadeWrapper extends IFacade {
 
     @Nonnull
