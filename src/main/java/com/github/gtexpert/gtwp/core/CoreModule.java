@@ -21,7 +21,6 @@ import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import gregtech.api.block.VariantItemBlock;
-import gregtech.loaders.recipe.RecyclingRecipes;
 
 import com.github.gtexpert.gtwp.Tags;
 import com.github.gtexpert.gtwp.api.ModValues;
@@ -71,9 +70,7 @@ public class CoreModule implements IModule {
     public void init(FMLInitializationEvent event) {}
 
     @Override
-    public void postInit(FMLPostInitializationEvent event) {
-        RecyclingRecipes.init();
-    }
+    public void postInit(FMLPostInitializationEvent event) {}
 
     @Override
     public void registerBlocks(RegistryEvent.Register<Block> event) {

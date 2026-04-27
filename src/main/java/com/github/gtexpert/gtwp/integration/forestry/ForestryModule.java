@@ -1,6 +1,12 @@
 package com.github.gtexpert.gtwp.integration.forestry;
 
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import java.util.Collections;
+import java.util.List;
+
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraftforge.event.RegistryEvent;
+
+import org.jetbrains.annotations.NotNull;
 
 import com.github.gtexpert.gtwp.api.ModValues;
 import com.github.gtexpert.gtwp.api.modules.TModule;
@@ -17,8 +23,14 @@ import com.github.gtexpert.gtwp.module.Modules;
          description = "Forestry Integration Module")
 public class ForestryModule extends GTWPIntegrationSubmodule {
 
+    @NotNull
     @Override
-    public void postInit(FMLPostInitializationEvent event) {
+    public List<Class<?>> getEventBusSubscribers() {
+        return Collections.singletonList(ForestryModule.class);
+    }
+
+    @Override
+    public void registerRecipesNormal(RegistryEvent.Register<IRecipe> event) {
         ForestryWoodRecipe.init();
     }
 }
