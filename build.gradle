@@ -34,7 +34,7 @@ plugins {
     id 'eclipse'
     id 'maven-publish'
     id 'org.jetbrains.gradle.plugin.idea-ext' version '1.1.8'
-    id 'com.gtnewhorizons.retrofuturagradle' version '1.4.0'
+    id 'com.gtnewhorizons.retrofuturagradle' version '1.4.9'
     id 'net.darkhax.curseforgegradle' version '1.1.24' apply false
     id 'com.modrinth.minotaur' version '2.8.7' apply false
     id 'com.diffplug.spotless' version '6.13.0' apply false
@@ -242,7 +242,7 @@ if (enableSpotless.toBoolean()) {
 
             toggleOffOn()
             importOrderFile(orderFile)
-            removeUnusedImports()
+            // removeUnusedImports()
             endWithNewline()
             //noinspection GroovyAssignabilityCheck
             eclipse('4.19.0').configFile(formatFile)
